@@ -1,8 +1,8 @@
 /*
-*  styles for professor-related elements
+*  styles for adopter-related elements
  */
-/* styles for list of professors */
-.professor-container{
+/* styles for list of adopters */
+.adopter-container{
     margin: 10px auto;
     width: 100%;
     border: 0px solid var(--clr-primary-8);
@@ -11,13 +11,13 @@
     justify-content: flex-start;
 }
 
-.professor-list {
+.adopter-list {
     display: flex;
     flex-direction: column;
     min-width: 250px;
 }
 
-.professor-list a {
+.adopter-list a {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -30,35 +30,35 @@
     height: 35px;
 }
 
-.professor-list a div {
+.adopter-list a div {
     display: inline-block;
     height: 80%;
 }
-.professor-list a.active,
-.professor-list a:hover {
+.adopter-list a.active,
+.adopter-list a:hover {
     background-color: #e4f1fe;
 }
 
-.professor-list a span {
+.adopter-list a span {
     display: inline-block;
     width: 10px;
     height: 100%;
     margin-right: 5px;
 }
 
-.professor-list a.active span {
+.adopter-list a.active span {
     background-color: gold;
 }
 
-/* styles for professor details*/
+/* styles for adopter details*/
 
-.professor-item {
+.adopter-item {
     display: flex;
     flex-direction: column;
     width: 100%;
 }
 
-.professor-details {
+.adopter-details {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -67,17 +67,17 @@
     min-height: 230px;
 }
 
-.professor-info {
+.adopter-info {
     width: 60%;
     min-width: 260px;
     max-width: 460px;
 }
 
-.professor-info div {
+.adopter-info div {
     padding: 3px;
 }
 
-.professor-name {
+.adopter-name {
     min-width: 250px;
     font-weight: 600;
     font-size: 1.2rem;
@@ -85,17 +85,17 @@
     border-bottom: 1px dotted var(--clr-grey-8);
 }
 
-.professor-photo {
+.adopter-photo {
     width: 40%;
     display: flex;
     justify-content: right;
     align-items: flex-start;
     height: 250px;
 }
-.professor-photo img {
+.adopter-photo img {
     width: 150px;
 }
 
-.professor-classes {
+.adopter-classes {
     margin-top: 40px;
 }

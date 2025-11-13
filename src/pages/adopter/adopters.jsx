@@ -1,21 +1,21 @@
 /*
 Author: Abla Eklou
 Date: 11/6/2025
-File:professors.jsx
-Description: create a  professors page
+File:adopters.jsx
+Description: create a  adopters page
 */
 import {settings} from "../../config/config";
 import {useState, useEffect} from 'react';
 import {NavLink, useLocation} from "react-router-dom";
-import "../../assets/css/professor.css";
+import "../../assets/css/adopter.css";
 
 import React from 'react';
 
-const Professors = () => {
+const Adopters = () => {
     const {pathname} = useLocation();
-    const [subHeading, setSubHeading] = useState("All Professors");
-    const url = settings.baseApiUrl + "/professors";
-    const [professors, setProfessors] = useState(null);
+    const [subHeading, setSubHeading] = useState("All Adopters");
+    const url = settings.baseApiUrl + "/adopters";
+    const [adopters, setAdopters] = useState(null);
     const [error, setError] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
 
@@ -26,7 +26,7 @@ const Professors = () => {
         request.onload = () => { // Request finished.
             setIsLoading (false)
             if (request.status === 200) {
-                setProfessors(JSON.parse(request.response));
+                setAdopters(JSON.parse(request.response));
             } else {
                 setError("Status: " + request.status + "; Error: " + request.statusText);
             }
@@ -38,13 +38,13 @@ const Professors = () => {
         request.send();
     });
     useEffect(() => {
-        setSubHeading("All Professors");
+        setSubHeading("All Adopters");
     }, [pathname]);
 
     return (
         <div>
             <div className="main-heading">
-                <div className="container">Professor</div>
+                <div className="container">Adopter</div>
             </div>
             <div className="sub-heading">
                 <div className="container">{subHeading}</div>
@@ -55,18 +55,18 @@ const Professors = () => {
                     Please wait while data is being loaded
                     <img src="/src/assets/img/loading.gif" alt="Loading ......"/>
                 </div>}
-                {professors && <div className="professor-container">
-                    <div className="professor-list">
-                        {professors.map((professor) => (
-                            <NavLink key={professor.id}
+                {adopters && <div className="adopter-container">
+                    <div className="adopter-list">
+                        {adopters.map((adopter) => (
+                            <NavLink key={adopter.id}
                                      className={({isActive}) => isActive ? "active" : ""}
                                      to="#">
-                                <span>&nbsp;</span><div>{professor.name}</div>
+                                <span>&nbsp;</span><div>{adopter.name}</div>
                             </NavLink>
                         ))}
                     </div>
-                    <div className="professor-item">
-                        Professor details
+                    <div className="adopter-item">
+                        Adopter details
                     </div>
                 </div>}
 
@@ -75,4 +75,4 @@ const Professors = () => {
     );
 };
 
-export default Professors;
+export default Adopters;

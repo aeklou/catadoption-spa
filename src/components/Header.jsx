@@ -7,7 +7,7 @@
 
 import {NavLink} from "react-router-dom";
 import {Navbar, Nav, Container} from "react-bootstrap";
-import logo from "/src/assets/img/college-icon.png";
+import logo from "/src/assets/img/cat-icon.png";
 //This component creates a React-Bootstrap navbar. https://react-bootstrap.github.io/components/navbar/
 const Header = () => {
     const className = ({ isActive }) => isActive ? "nav-link active" : "nav-link";

@@ -14,7 +14,7 @@ const Home = () => {
                 <div className="container">Home</div>
             </div>
             <div className="sub-heading">
-                <div className="container">Welcome to MyCollege Application</div>
+                <div className="container">Welcome to CatAdoption Application</div>
             </div>
             <div className="main-content container">
                 <p>This application demonstrates a responsive Single Page Application (SPA) architecture.
@@ -22,7 +22,7 @@ const Home = () => {
                     successive pages, making the application behave more like a desktop application.
                     This application is created with the <a href="https://reactjs.org/" target="_blank">React</a>&nbsp;
                     and <a href="https://react-bootstrap.github.io/" target="_blank">React Bootstrap</a> libraries.</p>
-                <p>This application is an API client. Data of the application is provided by an API service called <strong>MyCollege API</strong>.
+                <p>This application is an API client. Data of the application is provided by an API service called <strong>Cat Adoption API</strong>.
                     The application uses four common HTTP methods for CRUD operations: <strong>GET, POST, PUT, and DELETE</strong>.
                 </p>
                 <p>This application uses three different approaches for making API calls:</p>

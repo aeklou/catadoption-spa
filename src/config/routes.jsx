@@ -8,7 +8,7 @@ import React from 'react';
 import {BrowserRouter,Routes,Route}from "react-router-dom";
 import Layout from "../components/Layout";
 import Home from "../pages/home";
-import Professors from "../pages/professor/professors";
+import Adopters from "../pages/adopter/adopters";
 import NoMatch from "../pages/nomatch";
 const AppRoutes = () => {
     return (
@@ -17,7 +17,7 @@ const AppRoutes = () => {
                 <Routes>
                     <Route path="/" element={<Layout/>}>
                         <Route index element={<Home/>}/>
-                        <Route path="professors" element={<Professors />}/>
+                        <Route path="adopters" element={<Adopters />}/>
                         <Route path="*" element={<NoMatch/>}/>
                     </Route>
                 </Routes>
