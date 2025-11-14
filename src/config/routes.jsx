@@ -12,7 +12,7 @@ import Adopters from "../pages/adopter/adopters";
 import Adopter from "../pages/adopter/adopter";
 
 import NoMatch from "../pages/nomatch";
-import Cats from "../pages/cat/cats";
+import Cats from "../pages/cats/cat";
 import {AuthProvider} from "../services/useAuth";
 import Signin from "../pages/auth/signin";
 import Signout from "../pages/auth/signout";
