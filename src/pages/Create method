@@ -1,0 +1,62 @@
+<?php
+class Adopter {
+    private PDO $conn;
+    private string $table = 'adopter';
+
+    public function __construct(PDO $db) {
+        $this->conn = $db;
+    }
+
+    // Create a new adopter
+    public function create(array $data): bool {
+        $sql = "INSERT INTO {$this->table} 
+            (first_name, last_name, email, phone, address, city, state, zip_code)
+            VALUES 
+            (:first_name, :last_name, :email, :phone, :address, :city, :state, :zip_code)";
+
+        $stmt = $this->conn->prepare($sql);
+
+        // Bind parameters
+        $stmt->bindParam(':first_name', $data['first_name']);
+        $stmt->bindParam(':last_name', $data['last_name']);
+        $stmt->bindParam(':email', $data['email']);
+        $stmt->bindParam(':phone', $data['phone']);
+        $stmt->bindParam(':address', $data['address']);
+        $stmt->bindParam(':city', $data['city']);
+        $stmt->bindParam(':state', $data['state']);
+        $stmt->bindParam(':zip_code', $data['zip_code']);
+
+        // Execute and return result
+        return $stmt->execute();
+    }
+}
+
+// Example usage:
+
+try {
+    $pdo = new PDO("mysql:host=localhost;dbname=hearts&paws_db;charset=utf8mb4", "root", "");
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    $adopter = new Adopter($pdo);
+
+    $newAdopter = [
+        'first_name' => 'Molly',
+        'last_name' => 'Parker',
+        'email' => 'molly.p@email.com',
+        'phone' => '(555) 111-2233',
+        'address' => '123 New Street',
+        'city' => 'Bloomington',
+        'state' => 'IN',
+        'zip_code' => '47401'
+    ];
+
+    if ($adopter->create($newAdopter)) {
+        echo "Adopter created successfully!";
+    } else {
+        echo "Failed to create adopter.";
+    }
+
+} catch (PDOException $e) {
+    echo "Connection failed: " . $e->getMessage();
+}
+?>
